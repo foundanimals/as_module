@@ -1,0 +1,44 @@
+<html>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="reddingo_tags_json_clean.js"></script>
+<script>
+$(document).ready(function(){
+
+	$.each(json_data[0], function(key, valueObj){
+
+		$.each(json_data[0][key], function(_key, _valueObj){
+			if (_key == 'code'){
+				delete json_data[0][key][_key];
+			}
+			if (_key == 'short_code'){
+				delete json_data[0][key][_key];
+			}
+			if (_key == 'design_code'){
+				delete json_data[0][key][_key];
+			}
+			if (_key == 'design'){
+				delete json_data[0][key][_key];
+			}
+			if (_key == 'colour_code'){
+				delete json_data[0][key][_key];
+			}
+			if (_key == 'colour_short_code'){
+				delete json_data[0][key][_key];
+			}
+		});
+
+		console.log('this');
+		$('pre').append( key +': '+ json_data[0][key]['description'] );
+		$('pre').append("\n");
+	});
+});
+</script>
+
+<body>
+
+	<pre></pre>
+
+</body>
+</html>
